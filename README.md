@@ -2,7 +2,6 @@
 
 - Create React App
 - Configured Tailwind
--
 
 # Features
 
