@@ -15,6 +15,9 @@ import { checkValidData } from "../utills/validate";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
 
+  //5
+  const [errorMessage, setErrorMessage] = useState(null);
+
   //3
   const email = useRef(null);
   const password = useRef(null);
@@ -23,11 +26,12 @@ const Login = () => {
   const handleButtonClick = () => {
     //checkValidData(email, password);
 
+    //4
     console.log(email.current.value);
     console.log(password.current.value);
 
     const message = checkValidData(email.current.value, password.current.value);
-    console.log(message);
+    setErrorMessage(message);
   };
   /*so atline 46 instead of sign in, i can hve my JSX, if it is isSignInForm then use the text Sign In  */
   const toggleSignInForm = () => {
@@ -78,6 +82,7 @@ const Login = () => {
           className="p-2 my-2 w-full bg-gray-700"
         />
 
+        <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
         <button
           className="p-4 my-4 bg-red-700 w-full rounded-lg"
           onClick={handleButtonClick}
