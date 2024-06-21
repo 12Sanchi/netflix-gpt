@@ -52,6 +52,14 @@ as backened + u can build a fully  fledged application which can have a back end
 authenticate which can have a user login & once you log in then only u log in then
 only you can enter inside 
 
+What do you want to use as your public directory?--Build---when we ere doing parcel we had a dist folder 
+where we build up our project whre all the bundld files,production ready files go to that folder
+SIMILARLY IN CCREATE REACT APP WE HAVE BUILD FOLDER so plz name it as build---- where is this build cmd,
+how do we check,wehave package.json we already have build cmd,build cmd will already run some scripts,
+create react app already gave us build cmd,it is creating optimised productyion build for our project 
+JUST 3 CMD AND OUR APP WILL DEPLOY ON FIREBASE 
+
+
 
 
 
