@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import Header from "./Header";
 import { useState } from "react";
-import { checkValidData } from "../utills/validate";
-
+import { checkValidData } from "../utils/validate";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
 /* If this fn toggleSignInForm is called,it should change to a sign up form,how
    for this i will make a state var.right i need to  change my state var.,how will i create a state var.
    i will use my useState in react this will give me access to a variable let me call it as isSign in 
@@ -24,14 +25,38 @@ const Login = () => {
 
   //2
   const handleButtonClick = () => {
-    //checkValidData(email, password);
-
     //4
     console.log(email.current.value);
     console.log(password.current.value);
 
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
+
+    //6
+    if (message) return;
+
+    //Sign Up --Creates a new account
+    if (!isSignInForm) {
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+          // ..
+        });
+    } else {
+      //Sign in--Givves peemission to existing account
+    }
   };
   /*so atline 46 instead of sign in, i can hve my JSX, if it is isSignInForm then use the text Sign In  */
   const toggleSignInForm = () => {

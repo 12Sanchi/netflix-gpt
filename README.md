@@ -2,8 +2,17 @@
 
 - Create React App
 - Configured Tailwind
-  -(login
+  -(itself-login
   -validate)
+  -Header
+  -Routing of app
+  -Login Form
+  -Sign up Form
+  -Form Validation
+  -useRef Hook
+  -Firebase Setup
+  -Deploying our app to production
+  -Create Signup User Account
 
 # Features
 

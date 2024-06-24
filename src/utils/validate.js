@@ -58,7 +58,24 @@ SIMILARLY IN CCREATE REACT APP WE HAVE BUILD FOLDER so plz name it as build---- 
 how do we check,wehave package.json we already have build cmd,build cmd will already run some scripts,
 create react app already gave us build cmd,it is creating optimised productyion build for our project 
 JUST 3 CMD AND OUR APP WILL DEPLOY ON FIREBASE 
+1-Install firebase CLI-npm install-g firebase-tools
+2-Firebase Login- firebase login 
+3-Initialize Firebase-firebase init,then select Hosting
+4-Deploy cmd-firebase deploy
 
+Again in login.js ----password authentiation--or u can wrte if my msg is null then write th sign in or
+ sign up logic --if my msg is there i want to return, means if my Email ID is not valid or Password is
+  not valid,if my msg is present 
+then just return don't go ahead, why do i return,i dont want program to go ahead of this right  
+return from this sta.itself otherwise sign in and sign up the user
+--i have put not here means sign up form
+Now go to firebase docs-build-web-c/v import get auth in Login.js
+if u would see in firebase docs all these api's like--createUserWithEmailAndPassword
+will need auth,and  this auth comes from getAuth,if u have to call any api,u will have to 
+pass this  auth with Email ID ---NOW CALLING THIS const auth = getAuth();
+ONCE IN firebase.js --now copy the logic,
+createUserWithEmailAndPassword(auth, email, password) is an api that gives u promise and it is 
+handling promise with then obj & it is catching error NOW C/V THE LOGIC IN SIGUP SECTION 
 
 
 
