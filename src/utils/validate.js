@@ -75,10 +75,29 @@ will need auth,and  this auth comes from getAuth,if u have to call any api,u wil
 pass this  auth with Email ID ---NOW CALLING THIS const auth = getAuth();
 ONCE IN firebase.js --now copy the logic,
 createUserWithEmailAndPassword(auth, email, password) is an api that gives u promise and it is 
-handling promise with then obj & it is catching error NOW C/V THE LOGIC IN SIGUP SECTION 
+handling promise with then obj & it is catching error NOW C/V THE LOGIC IN SIGUP SECTION
+-----IF the USER SIGN UP/SIGN IN WE  WILL GET THIS USER OBJ,AND I HAVE TO KEEP THE USER OBJ WITH US BCOZ I CAN NEED 
+THIS USER OBJ ANYWHERE IN THE APP ,AS soon as the uuser sign in/sign up i will add ll the data to mine redux store 
+and will navigate the user to my browse page 
+npm i -D @redux/toolkit
+npm i react-redux
+now lets build store now i will create ppStore,there is something knownnas CofigureStore
+what does this store takes..takes up a config.this config will have a reducer and this reducer will have
+diff reducer from diff slices and we will just export our default appStore,let  us create a slice
+ ,userSlice .....now inthis createSlice what alll info do we have first is name--user and then initialstate and then we will also
+  add reducers and then we will add diff types of reducerfunct.lets add a addUser as soon as we login 
+  this reducer action will be disptched,we will disptch addUser andd we will addd user to our redux store and we will also create removeuser 
+  suppose the user signout then this  usr also should remove mineobj,lets add user state 
+now i will export these and will import userReducer in appStore,now i  have to provide my store to my app   
+on the root of my appl. i will provide my store, i will add my store over here, i can just import my provider--
+comes from react/redux 
 
-
-
+i created a store,then i created a slicw,then added the slice reducer to my store,and then i am providing my store  
+as soon as user signs in/sign up like in my SIGN UP form, i have createUser api,as soon as i created  my user,if its 
+success then here i  can dispatch an action from herre and then i have to dispatch an action from SIGN IN form also so instaed of ddispatching an 
+action here and there,WE WILL USE A UTILITY WHICH IS GIVEN TO US BY FIREBASE,  onauthstatechange-This api is called Whenever the user sign 
+in/whenever the user sign up whenever the user sign out,Whenever THERE IS AUTHENTICATION CHANGE--this is kind of  like event
+ listener--i want to call this api only once --firebase-build-web-manage users passte it in Body.js
 
 
 
